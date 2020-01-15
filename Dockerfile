@@ -12,9 +12,7 @@ ENV FLASK_DEBUG True
 RUN mkdir /app
 WORKDIR /app
 
-RUN pip install --upgrade pip && \
-    pip install pipenv && \
-    pipenv install --dev --system --deploy --ignore-pipfile
+RUN pip install --upgrade pip
 
 ADD . /app
 
