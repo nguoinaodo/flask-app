@@ -13,3 +13,8 @@ ifdown wlp3s0 --force
 ip addr flush wlp3s0
 ifup wlp3s0
 ```
+
+You can also use ifconfig to bring an interface up or down. The difference with ifup is that
+ifconfig eth0 up will re-activate the nic keeping its existing (current) configuration, whereas
+ifup will read the correct file that contains a (possibly new) configuration and use this config
+file to bring the interface up.
