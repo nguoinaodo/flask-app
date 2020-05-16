@@ -18,3 +18,15 @@ You can also use ifconfig to bring an interface up or down. The difference with 
 ifconfig eth0 up will re-activate the nic keeping its existing (current) configuration, whereas
 ifup will read the correct file that contains a (possibly new) configuration and use this config
 file to bring the interface up.
+
+## 2. Config temporary IP
+Add IP.
+```
+ifconfig wlp3s0 192.168.0.107
+ifdown wlp3s0 --force; ifup wlp3s0
+```
+Del IP.
+```
+ip addr del 192.168.2.107 dev wlp3s0
+ifdown wlp3s0 --force; ifup wlp3s0
+```
